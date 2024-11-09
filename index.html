@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        .category-list li {
+            font-size: 1.2em;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .category-list li:hover {
+            transform: scale(1.05);
+        }
+        .gallery, #about {
+            display: none;
+            margin-top: 20px;
+        }
+        .artwork {
+            display: inline-block;
+            margin: 10px;
+            width: 150px;
+            text-align: center;
+        }
+        .artwork img {
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+        #about {
+            margin-top: 40px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Portfolio</h1>
+    <ul class="category-list">
+        <li onclick="showGallery('category1')">Category 1</li>
+        <li onclick="showGallery('category2')">Category 2</li>
+        <li onclick="showGallery('category3')">Category 3</li>
+    </ul>
+
+    <div id="category1" class="gallery">
+        <h2>Category 1</h2>
+        <div class="artwork">
+            <img src="artwork1.jpg" alt="Artwork 1">
+            <p>Artwork Title 1</p>
+        </div>
+        <div class="artwork">
+            <img src="artwork2.jpg" alt="Artwork 2">
+            <p>Artwork Title 2</p>
+        </div>
+    </div>
+
+    <div id="category2" class="gallery">
+        <h2>Category 2</h2>
+        <!-- Add artworks for Category 2 here -->
+    </div>
+
+    <div id="category3" class="gallery">
+        <h2>Category 3</h2>
+        <!-- Add artworks for Category 3 here -->
+    </div>
+
+    <div id="about">
+        <h2>About Me</h2>
+        <p>contact me at <a href="mailto:zizixt9@gmail.com">zizixt9@gmail.com.com</a>.</p>
+    </div>
+
+    <script>
+        function showGallery(categoryId) {
+            document.querySelectorAll('.gallery').forEach(gallery => {
+                gallery.style.display = 'none';
+            });
+            document.getElementById(categoryId).style.display = 'block';
+        }
+        document.getElementById("about").style.display = "block";
+    </script>
+</body>
+</html>
